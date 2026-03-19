@@ -1,0 +1,20 @@
+## sys_tssi_64_infinix-user 13 TP1A.220624.014 548390 release-keys
+- Manufacturer: infinix
+- Platform: mt6781
+- Codename: Infinix-X670
+- Brand: Infinix
+- Flavor: sys_tssi_64_infinix-user
+- Release Version: 13
+- Kernel Version: 4.19.191
+- Id: TP1A.220624.014
+- Incremental: 240224V556
+- Tags: release-keys
+- CPU Abilist: arm64-v8a,armeabi-v7a,armeabi
+- A/B Device: true
+- Treble Device: true
+- Locale: en-US
+- Screen Density: 480
+- Fingerprint: Infinix/X670-GL/Infinix-X670:12/SP1A.210812.016/240224V150:user/release-keys
+- OTA version: 
+- Branch: sys_tssi_64_infinix-user-13-TP1A.220624.014-548390-release-keys
+- Repo: infinix_infinix-x670_dump

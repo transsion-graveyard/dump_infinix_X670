@@ -1,0 +1,1 @@
+com.tencent.ig=transsionpreinstall_int

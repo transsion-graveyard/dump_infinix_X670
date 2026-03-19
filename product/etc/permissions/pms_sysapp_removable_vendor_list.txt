@@ -1,0 +1,15 @@
+
+com.afmobi.boomplayer
+com.ss.android.ugc.trill
+com.zhiliaoapp.musically
+id.mjs.etalaseapp
+com.facebook.katana
+com.instagram.android
+com.facebook.orca
+com.vuclip.viu
+cn.wps.moffice_eng
+com.tencent.ig
+com.google.android.apps.docs
+com.google.android.apps.tachyon
+com.google.android.videos
+com.transsion.compass
