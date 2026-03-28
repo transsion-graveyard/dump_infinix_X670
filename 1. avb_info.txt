@@ -1,0 +1,54 @@
+
+inscrutable@inscrutable:~/android_development/los_22_2/external/avb$ python3 avbtool.py info_image --image '/home/inscrutable/Desktop/vbmeta.img' 
+Minimum libavb version:   1.0
+Header Block:             256 bytes
+Authentication Block:     320 bytes
+Auxiliary Block:          3328 bytes
+Public key (sha1):        cdbb77177f731920bbe0a0f94f84d9038ae0617d
+Algorithm:                SHA256_RSA2048
+Rollback Index:           0
+Flags:                    0
+Rollback Index Location:  0
+Release String:           'avbtool 1.2.0'
+Descriptors:
+    Chain Partition descriptor:
+      Partition Name:          boot
+      Rollback Index Location: 3
+      Public key (sha1):       9d808b0995768d0677fccb1efcddb7cf9e153d99
+      Flags:                   0
+    Chain Partition descriptor:
+      Partition Name:          vbmeta_system
+      Rollback Index Location: 2
+      Public key (sha1):       fa41159a5d696abdef93176a07d0b0d001263f01
+      Flags:                   0
+    Chain Partition descriptor:
+      Partition Name:          vbmeta_vendor
+      Rollback Index Location: 4
+      Public key (sha1):       9577bc6c0772975ecce93c4d8a178662c728dadf
+      Flags:                   0
+    Prop: com.android.build.system_ext.os_version -> '13'
+    Prop: com.android.build.system_ext.fingerprint -> 'Infinix/TSSI/FULL-64:13/TP1A.220624.014/240224V142:user/release-keys'
+    Prop: com.android.build.system_ext.security_patch -> '2024-02-05'
+    Prop: com.android.build.dtbo.fingerprint -> 'Infinix/X670-GL/Infinix-X670:12/SP1A.210812.016/240224V150:user/release-keys'
+    Hash descriptor:
+      Image Size:            61168 bytes
+      Hash Algorithm:        sha256
+      Partition Name:        dtbo
+      Salt:                  194f1e1764adeb247472306646fd9bc8511c28fd519eb9d90f51e8aea51d930e
+      Digest:                c519f85f9079425e718db39ee586a544518ef48d94e0eee9ffabaccbfb32b56b
+      Flags:                 0
+    Hashtree descriptor:
+      Version of dm-verity:  1
+      Image Size:            1885388800 bytes
+      Tree Offset:           1885388800
+      Tree Size:             14856192 bytes
+      Data Block Size:       4096 bytes
+      Hash Block Size:       4096 bytes
+      FEC num roots:         2
+      FEC offset:            1900244992
+      FEC size:              15024128 bytes
+      Hash Algorithm:        sha256
+      Partition Name:        system_ext
+      Salt:                  08373b7590e6465a4ef70dcdd985bbc7026c744bf71d931cada1527b5863d3d8
+      Root Digest:           51125c626af1aa808c965c211f6208122dfd8f9ea826cf0e896ad2cf840ec5f7
+      Flags:                 0
