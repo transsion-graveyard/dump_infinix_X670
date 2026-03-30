@@ -1,0 +1,303 @@
+
+## Device Physical / Logical Partitions via Symlinks - (Physical Storage Mapping)
+
+| Name            | Type  | Maj/Min |       Blocks |        Start |          End |    Size (bytes) |       Size | By-Name                              | Symlink           |
+|-----------------|-------|---------|--------------|--------------|--------------|-----------------|------------|--------------------------------------|-------------------|
+| preloader_raw_a | raw   | 253:38  |         8184 |            0 |         8183 |         4190208 |      3.99M | /dev/block/by-name/preloader_raw_a   | /dev/block/dm-38  |
+| preloader_raw_b | raw   | 253:39  |         8184 |            0 |         8183 |         4190208 |      3.99M | /dev/block/by-name/preloader_raw_b   | /dev/block/dm-39  |
+| sda             | raw   | 8:0     |         8192 |            0 |         8191 |         4194304 |      4.00M | /dev/block/by-name/sda               | /dev/block/sda    |
+| sdb             | raw   | 8:16    |         8192 |            0 |         8191 |         4194304 |      4.00M | /dev/block/by-name/sdb               | /dev/block/sdb    |
+| vbmeta_system_a | raw   | 8:42    |        16384 |       358464 |       374847 |         8388608 |      8.00M | /dev/block/by-name/vbmeta_system_a   | /dev/block/sdc10  |
+| vbmeta_vendor_a | raw   | 8:43    |        16384 |       374848 |       391231 |         8388608 |      8.00M | /dev/block/by-name/vbmeta_vendor_a   | /dev/block/sdc11  |
+| vbmeta_b        | raw   | 8:44    |        16384 |       391232 |       407615 |         8388608 |      8.00M | /dev/block/by-name/vbmeta_b          | /dev/block/sdc12  |
+| vbmeta_system_b | raw   | 8:45    |        16384 |       407616 |       423999 |         8388608 |      8.00M | /dev/block/by-name/vbmeta_system_b   | /dev/block/sdc13  |
+| vbmeta_vendor_b | raw   | 8:46    |        16384 |       424000 |       440383 |         8388608 |      8.00M | /dev/block/by-name/vbmeta_vendor_b   | /dev/block/sdc14  |
+| md_udc          | raw   | 8:47    |        46288 |       440384 |       486671 |        23699456 |     22.60M | /dev/block/by-name/md_udc            | /dev/block/sdc15  |
+| metadata        | ext4  | 259:0   |        65536 |       486672 |       552207 |        33554432 |     32.00M | /dev/block/by-name/metadata          | /dev/block/sdc16  |
+| persist         | ext4  | 259:1   |       103152 |       552208 |       655359 |        52813824 |     50.36M | /dev/block/by-name/persist           | /dev/block/sdc17  |
+| protect1        | ext4  | 259:2   |        16384 |       655360 |       671743 |         8388608 |      8.00M | /dev/block/by-name/protect1          | /dev/block/sdc18  |
+| protect2        | ext4  | 259:3   |        16384 |       671744 |       688127 |         8388608 |      8.00M | /dev/block/by-name/protect2          | /dev/block/sdc19  |
+| boot_para       | raw   | 8:33    |        53248 |           64 |        53311 |        27262976 |     26.00M | /dev/block/by-name/boot_para         | /dev/block/sdc1   |
+| seccfg          | raw   | 259:4   |        16384 |       688128 |       704511 |         8388608 |      8.00M | /dev/block/by-name/seccfg            | /dev/block/sdc20  |
+| otp             | raw   | 259:5   |        98304 |       704512 |       802815 |        50331648 |     48.00M | /dev/block/by-name/otp               | /dev/block/sdc21  |
+| md1img_a        | raw   | 259:6   |       307200 |       802816 |      1110015 |       157286400 |    150.00M | /dev/block/by-name/md1img_a          | /dev/block/sdc22  |
+| spmfw_a         | raw   | 259:7   |         2048 |      1110016 |      1112063 |         1048576 |      1.00M | /dev/block/by-name/spmfw_a           | /dev/block/sdc23  |
+| pi_img_a        | raw   | 259:8   |         2048 |      1112064 |      1114111 |         1048576 |      1.00M | /dev/block/by-name/pi_img_a          | /dev/block/sdc24  |
+| scp_a           | raw   | 259:9   |        12288 |      1114112 |      1126399 |         6291456 |      6.00M | /dev/block/by-name/scp_a             | /dev/block/sdc25  |
+| sspm_a          | raw   | 259:10  |         2048 |      1126400 |      1128447 |         1048576 |      1.00M | /dev/block/by-name/sspm_a            | /dev/block/sdc26  |
+| gz_a            | raw   | 259:11  |        65536 |      1128448 |      1193983 |        33554432 |     32.00M | /dev/block/by-name/gz_a              | /dev/block/sdc27  |
+| lk_a            | raw   | 259:12  |         4096 |      1193984 |      1198079 |         2097152 |      2.00M | /dev/block/by-name/lk_a              | /dev/block/sdc28  |
+| logo_a          | raw   | 259:13  |        16384 |      1198080 |      1214463 |         8388608 |      8.00M | /dev/block/by-name/logo_a            | /dev/block/sdc29  |
+| proinfo         | raw   | 8:34    |         6144 |        53312 |        59455 |         3145728 |      3.00M | /dev/block/by-name/proinfo           | /dev/block/sdc2   |
+| boot_a          | raw   | 259:14  |        65536 |      1214464 |      1279999 |        33554432 |     32.00M | /dev/block/by-name/boot_a            | /dev/block/sdc30  |
+| vendor_boot_a   | raw   | 259:15  |       131072 |      1280000 |      1411071 |        67108864 |     64.00M | /dev/block/by-name/vendor_boot_a     | /dev/block/sdc31  |
+| dtbo_a          | raw   | 259:16  |        16384 |      1411072 |      1427455 |         8388608 |      8.00M | /dev/block/by-name/dtbo_a            | /dev/block/sdc32  |
+| tee_a           | raw   | 259:17  |        10240 |      1427456 |      1437695 |         5242880 |      5.00M | /dev/block/by-name/tee_a             | /dev/block/sdc33  |
+| sec1            | raw   | 259:18  |         4096 |      1437696 |      1441791 |         2097152 |      2.00M | /dev/block/by-name/sec1              | /dev/block/sdc34  |
+| nvram           | raw   | 259:19  |       131072 |      1441792 |      1572863 |        67108864 |     64.00M | /dev/block/by-name/nvram             | /dev/block/sdc35  |
+| md1img_b        | raw   | 259:20  |       307200 |      1572864 |      1880063 |       157286400 |    150.00M | /dev/block/by-name/md1img_b          | /dev/block/sdc36  |
+| spmfw_b         | raw   | 259:21  |         2048 |      1880064 |      1882111 |         1048576 |      1.00M | /dev/block/by-name/spmfw_b           | /dev/block/sdc37  |
+| pi_img_b        | raw   | 259:22  |         2048 |      1882112 |      1884159 |         1048576 |      1.00M | /dev/block/by-name/pi_img_b          | /dev/block/sdc38  |
+| scp_b           | raw   | 259:23  |        12288 |      1884160 |      1896447 |         6291456 |      6.00M | /dev/block/by-name/scp_b             | /dev/block/sdc39  |
+| misc            | raw   | 8:35    |         1024 |        59456 |        60479 |          524288 |      0.50M | /dev/block/by-name/misc              | /dev/block/sdc3   |
+| sspm_b          | raw   | 259:24  |         2048 |      1896448 |      1898495 |         1048576 |      1.00M | /dev/block/by-name/sspm_b            | /dev/block/sdc40  |
+| gz_b            | raw   | 259:25  |        65536 |      1898496 |      1964031 |        33554432 |     32.00M | /dev/block/by-name/gz_b              | /dev/block/sdc41  |
+| lk_b            | raw   | 259:26  |         4096 |      1964032 |      1968127 |         2097152 |      2.00M | /dev/block/by-name/lk_b              | /dev/block/sdc42  |
+| logo_b          | raw   | 259:27  |        16384 |      1968128 |      1984511 |         8388608 |      8.00M | /dev/block/by-name/logo_b            | /dev/block/sdc43  |
+| boot_b          | raw   | 259:28  |        65536 |      1984512 |      2050047 |        33554432 |     32.00M | /dev/block/by-name/boot_b            | /dev/block/sdc44  |
+| vendor_boot_b   | raw   | 259:29  |       131072 |      2050048 |      2181119 |        67108864 |     64.00M | /dev/block/by-name/vendor_boot_b     | /dev/block/sdc45  |
+| dtbo_b          | raw   | 259:30  |        16384 |      2181120 |      2197503 |         8388608 |      8.00M | /dev/block/by-name/dtbo_b            | /dev/block/sdc46  |
+| tee_b           | raw   | 259:31  |        14336 |      2197504 |      2211839 |         7340032 |      7.00M | /dev/block/by-name/tee_b             | /dev/block/sdc47  |
+| super           | raw   | 259:32  |     16582912 |      2211840 |     18794751 |      8490450944 |      7.90G | /dev/block/by-name/super             | /dev/block/sdc48  |
+| tranfs          | ext4  | 259:33  |       620288 |     18794752 |     19415039 |       317587456 |    302.87M | /dev/block/by-name/tranfs            | /dev/block/sdc49  |
+| para            | raw   | 8:36    |         1024 |        60480 |        61503 |          524288 |      0.50M | /dev/block/by-name/para              | /dev/block/sdc4   |
+| userdata        | raw   | 259:34  |    480395224 |     19415040 |    499810263 |    245962354688 |    229.07G | /dev/block/by-name/userdata          | /dev/block/sdc50  |
+| flashinfo       | raw   | 259:35  |        32768 |    499810264 |    499843031 |        16777216 |     16.00M | /dev/block/by-name/flashinfo         | /dev/block/sdc51  |
+| expdb           | raw   | 8:37    |        81920 |        61504 |       143423 |        41943040 |     40.00M | /dev/block/by-name/expdb             | /dev/block/sdc5   |
+| frp             | raw   | 8:38    |         2048 |       143424 |       145471 |         1048576 |      1.00M | /dev/block/by-name/frp               | /dev/block/sdc6   |
+| nvcfg           | ext4  | 8:39    |        65536 |       145472 |       211007 |        33554432 |     32.00M | /dev/block/by-name/nvcfg             | /dev/block/sdc7   |
+| nvdata          | ext4  | 8:40    |       131072 |       211008 |       342079 |        67108864 |     64.00M | /dev/block/by-name/nvdata            | /dev/block/sdc8   |
+| vbmeta_a        | raw   | 8:41    |        16384 |       342080 |       358463 |         8388608 |      8.00M | /dev/block/by-name/vbmeta_a          | /dev/block/sdc9   |
+| sdc             | raw   | 8:32    |    499843072 |            0 |    499843071 |    255919652864 |    238.34G | /dev/block/by-name/sdc               | /dev/block/sdc    |
+
+## Device Mapper Partitions - (Logical / Virtual Block Devices)
+
+| DM Device         | Name                               | Maj:Min | Start | End        | Blocks    | Size (bytes) | Size    | By-Name                                | Backing |
+|-------------------|------------------------------------|---------|-------|------------|-----------|--------------|---------|----------------------------------------|---------|
+| /dev/block/dm-0   | system_ext_a                       | 253:0   | 0     | 2147807    | 2147808   | 1099677696   | 1.02G   |                                        | sdc48   |
+| /dev/block/dm-10  | com.android.resolv                 | 253:10  | 0     | 10255      | 10256     | 5251072      | 5.00M   |                                        | loop33  |
+| /dev/block/dm-11  | com.android.ondevicepersonalization| 253:11  | 0     | 27695      | 27696     | 14180352     | 13.52M  |                                        | loop31  |
+| /dev/block/dm-13  | com.android.media                  | 253:13  | 0     | 14271      | 14272     | 7307264      | 6.96M   |                                        | loop24  |
+| /dev/block/dm-15  | com.android.os.statsd              | 253:15  | 0     | 6679       | 6680      | 3420160      | 3.26M   |                                        | loop25  |
+| /dev/block/dm-16  | com.android.cellbroadcast          | 253:16  | 0     | 41479      | 41480     | 21237760     | 20.25M  |                                        | loop22  |
+| /dev/block/dm-17  | com.android.neuralnetworks         | 253:17  | 0     | 16015      | 16016     | 8200192      | 7.82M   |                                        | loop23  |
+| /dev/block/dm-18  | com.android.ipsec                  | 253:18  | 0     | 1727       | 1728      | 884736       | 0.84M   |                                        | loop21  |
+| /dev/block/dm-19  | com.android.tzdata                 | 253:19  | 0     | 1575       | 1576      | 806912       | 0.76M   |                                        | loop20  |
+| /dev/block/dm-1   | vendor_a                           | 253:1   | 0     | 1273487    | 1273488   | 652025856    | 621.82M |                                        | sdc48   |
+| /dev/block/dm-20  | com.android.conscrypt              | 253:20  | 0     | 15495      | 15496     | 7933952      | 7.56M   |                                        | loop19  |
+| /dev/block/dm-21  | com.android.permission             | 253:21  | 0     | 55647      | 55648     | 28491776     | 27.17M  |                                        | loop18  |
+| /dev/block/dm-22  | com.android.uwb                    | 253:22  | 0     | 5831       | 5832      | 2985984      | 2.84M   |                                        | loop37  |
+| /dev/block/dm-23  | com.android.extservices            | 253:23  | 0     | 12927      | 12928     | 6619136      | 6.31M   |                                        | loop17  |
+| /dev/block/dm-24  | com.android.art                    | 253:24  | 0     | 86295      | 86296     | 44183552     | 42.13M  |                                        | loop16  |
+| /dev/block/dm-25  | com.android.appsearch              | 253:25  | 0     | 8575       | 8576      | 4390912      | 4.18M   |                                        | loop13  |
+| /dev/block/dm-27  | com.android.adservices             | 253:27  | 0     | 45063      | 45064     | 23072768     | 22.00M  |                                        | loop14  |
+| /dev/block/dm-29  | com.android.wifi                   | 253:29  | 0     | 17815      | 17816     | 9121792      | 8.69M   |                                        | loop36  |
+| /dev/block/dm-2   | product_a                          | 253:2   | 0     | 2938415    | 2938416   | 1504468992   | 1.40G   |                                        | sdc48   |
+| /dev/block/dm-33  | com.android.mediaprovider          | 253:33  | 0     | 65207      | 65208     | 33386496     | 31.83M  |                                        | loop7   |
+| /dev/block/dm-34  | com.android.adbd                   | 253:34  | 0     | 22007      | 22008     | 11268096     | 10.74M  |                                        | loop6   |
+| /dev/block/dm-35  | com.android.media.swcodec          | 253:35  | 0     | 59583      | 59584     | 30507008     | 29.09M  |                                        | loop8   |
+| /dev/block/dm-37  | userdata                           | 253:37  | 0     | 480395223  | 480395224 | 245962354688 | 229.07G |                                        | sdc50   |
+| /dev/block/dm-38  | pl_a                               | 253:38  | 0     | 8183       | 8184      | 4190208      | 3.99M   | /dev/block/by-name/preloader_raw_a     | sda     |
+| /dev/block/dm-39  | pl_b                               | 253:39  | 0     | 8183       | 8184      | 4190208      | 3.99M   | /dev/block/by-name/preloader_raw_b     | sdb     |
+| /dev/block/dm-3   | system_a                           | 253:3   | 0     | 1639327    | 1639328   | 839335936    | 800.45M |                                        | sdc48   |
+| /dev/block/dm-6   | com.android.tethering              | 253:6   | 0     | 61447      | 61448     | 31461376     | 30.00M  |                                        | loop32  |
+| /dev/block/dm-8   | com.android.sdkext                 | 253:8   | 0     | 2287       | 2288      | 1171456      | 1.11M   |                                        | loop29  |
+| /dev/block/dm-9   | com.android.scheduling             | 253:9   | 0     | 511        | 512       | 262144       | 0.25M   |                                        | loop28  |
+
+127|Infinix-X670:/ # cat /proc/partitions
+major minor  #blocks  name
+
+   1        0       4096 ram0
+   1        1       4096 ram1
+   1        2       4096 ram2
+   1        3       4096 ram3
+   1        4       4096 ram4
+   1        5       4096 ram5
+   1        6       4096 ram6
+   1        7       4096 ram7
+   1        8       4096 ram8
+   1        9       4096 ram9
+   1       10       4096 ram10
+   1       11       4096 ram11
+   1       12       4096 ram12
+   1       13       4096 ram13
+   1       14       4096 ram14
+   1       15       4096 ram15
+   7        0       8224 loop0
+   7        8        888 loop1
+   7       16      47484 loop2
+   7       24      40872 loop3
+   7       32      37384 loop4
+   7       40        308 loop5
+   7       48      11400 loop6
+   7       56      33104 loop7
+   7       64      30188 loop8
+   7       72      37384 loop9
+   7       80       8224 loop10
+   7       88     112036 loop11
+   7       96      89480 loop12
+   7      104       4492 loop13
+   7      112      22892 loop14
+   7      120      40872 loop15
+ 254        0    4341112 zram0
+   8       16       4096 sdb
+   8        0       4096 sda
+   8       32  249921536 sdc
+   8       33      26624 sdc1
+   8       34       3072 sdc2
+   8       35        512 sdc3
+   8       36        512 sdc4
+   8       37      40960 sdc5
+   8       38       1024 sdc6
+   8       39      32768 sdc7
+   8       40      65536 sdc8
+   8       41       8192 sdc9
+   8       42       8192 sdc10
+   8       43       8192 sdc11
+   8       44       8192 sdc12
+   8       45       8192 sdc13
+   8       46       8192 sdc14
+   8       47      23144 sdc15
+ 259        0      32768 sdc16
+ 259        1      51576 sdc17
+ 259        2       8192 sdc18
+ 259        3       8192 sdc19
+ 259        4       8192 sdc20
+ 259        5      49152 sdc21
+ 259        6     153600 sdc22
+ 259        7       1024 sdc23
+ 259        8       1024 sdc24
+ 259        9       6144 sdc25
+ 259       10       1024 sdc26
+ 259       11      32768 sdc27
+ 259       12       2048 sdc28
+ 259       13       8192 sdc29
+ 259       14      32768 sdc30
+ 259       15      65536 sdc31
+ 259       16       8192 sdc32
+ 259       17       5120 sdc33
+ 259       18       2048 sdc34
+ 259       19      65536 sdc35
+ 259       20     153600 sdc36
+ 259       21       1024 sdc37
+ 259       22       1024 sdc38
+ 259       23       6144 sdc39
+ 259       24       1024 sdc40
+ 259       25      32768 sdc41
+ 259       26       2048 sdc42
+ 259       27       8192 sdc43
+ 259       28      32768 sdc44
+ 259       29      65536 sdc45
+ 259       30       8192 sdc46
+ 259       31       7168 sdc47
+ 259       32    8291456 sdc48
+ 259       33     310144 sdc49
+ 259       34  240197612 sdc50
+ 259       35      16384 sdc51
+ 179        0  124936192 mmcblk0
+ 179        1  124935151 mmcblk0p1
+ 253        0    1073904 dm-0
+ 253        1     636744 dm-1
+ 253        2    1469208 dm-2
+ 253        3     819664 dm-3
+   7      128      43684 loop16
+   7      136       6652 loop17
+   7      144      28180 loop18
+   7      152       7932 loop19
+   7      160        864 loop20
+   7      168        984 loop21
+   7      176      21040 loop22
+   7      184       8196 loop23
+   7      192       7460 loop24
+   7      200       3544 loop25
+   7      208      47484 loop26
+   7      216       2264 loop27
+   7      224        376 loop28
+   7      232       1296 loop29
+   7      240       2828 loop30
+   7      248      14144 loop31
+   7      256      31224 loop32
+   7      264       5284 loop33
+   7      272       7644 loop34
+   7      280       1296 loop35
+   7      288       9144 loop36
+   7      296       3052 loop37
+ 253        6      30724 dm-6
+ 253        8       1144 dm-8
+ 253        9        256 dm-9
+ 253       10       5128 dm-10
+ 253       11      13848 dm-11
+ 253       13       7136 dm-13
+ 253       15       3340 dm-15
+ 253       16      20740 dm-16
+ 253       17       8008 dm-17
+ 253       18        864 dm-18
+ 253       19        788 dm-19
+ 253       20       7748 dm-20
+ 253       21      27824 dm-21
+ 253       22       2916 dm-22
+ 253       23       6464 dm-23
+ 253       24      43148 dm-24
+ 253       25       4288 dm-25
+ 253       27      22532 dm-27
+ 253       29       8908 dm-29
+ 253       33      32604 dm-33
+ 253       34      11004 dm-34
+ 253       35      29792 dm-35
+ 253       37  240197612 dm-37
+ 253       38       4092 dm-38
+ 253       39       4092 dm-39
+
+
+ Infinix-X670:/ # ls -lah /dev/block/by-name/
+total 0
+drwxr-xr-x 2 root root 1.1K 2026-03-29 13:47 .
+drwxr-xr-x 6 root root 3.1K 2026-03-29 13:48 ..
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 boot_a -> /dev/block/sdc30
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 boot_b -> /dev/block/sdc44
+lrwxrwxrwx 1 root root   15 2026-03-29 13:47 boot_para -> /dev/block/sdc1
+lrwxrwxrwx 1 root root   22 2026-03-29 13:47 bootloader1 -> /dev/block/by-name/lk1
+lrwxrwxrwx 1 root root   22 2026-03-29 13:47 bootloader2 -> /dev/block/by-name/lk2
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 dtbo_a -> /dev/block/sdc32
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 dtbo_b -> /dev/block/sdc46
+lrwxrwxrwx 1 root root   15 2026-03-29 13:47 expdb -> /dev/block/sdc5
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 flashinfo -> /dev/block/sdc51
+lrwxrwxrwx 1 root root   15 2026-03-29 13:47 frp -> /dev/block/sdc6
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 gz_a -> /dev/block/sdc27
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 gz_b -> /dev/block/sdc41
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 lk_a -> /dev/block/sdc28
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 lk_b -> /dev/block/sdc42
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 logo_a -> /dev/block/sdc29
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 logo_b -> /dev/block/sdc43
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 md1img_a -> /dev/block/sdc22
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 md1img_b -> /dev/block/sdc36
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 md_udc -> /dev/block/sdc15
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 metadata -> /dev/block/sdc16
+lrwxrwxrwx 1 root root   15 2026-03-29 13:47 misc -> /dev/block/sdc3
+lrwxrwxrwx 1 root root   15 2026-03-29 13:47 nvcfg -> /dev/block/sdc7
+lrwxrwxrwx 1 root root   15 2026-03-29 13:47 nvdata -> /dev/block/sdc8
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 nvram -> /dev/block/sdc35
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 otp -> /dev/block/sdc21
+lrwxrwxrwx 1 root root   15 2026-03-29 13:47 para -> /dev/block/sdc4
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 persist -> /dev/block/sdc17
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 pi_img_a -> /dev/block/sdc24
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 pi_img_b -> /dev/block/sdc38
+lrwxrwxrwx 1 root root   22 2026-03-29 13:47 preloader_raw_a -> /dev/block/mapper/pl_a
+lrwxrwxrwx 1 root root   22 2026-03-29 13:47 preloader_raw_b -> /dev/block/mapper/pl_b
+lrwxrwxrwx 1 root root   15 2026-03-29 13:47 proinfo -> /dev/block/sdc2
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 protect1 -> /dev/block/sdc18
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 protect2 -> /dev/block/sdc19
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 scp_a -> /dev/block/sdc25
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 scp_b -> /dev/block/sdc39
+lrwxrwxrwx 1 root root   14 2026-03-29 13:47 sda -> /dev/block/sda
+lrwxrwxrwx 1 root root   14 2026-03-29 13:47 sdb -> /dev/block/sdb
+lrwxrwxrwx 1 root root   14 2026-03-29 13:47 sdc -> /dev/block/sdc
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 sec1 -> /dev/block/sdc34
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 seccfg -> /dev/block/sdc20
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 spmfw_a -> /dev/block/sdc23
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 spmfw_b -> /dev/block/sdc37
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 sspm_a -> /dev/block/sdc26
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 sspm_b -> /dev/block/sdc40
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 super -> /dev/block/sdc48
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 tee_a -> /dev/block/sdc33
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 tee_b -> /dev/block/sdc47
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 tranfs -> /dev/block/sdc49
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 userdata -> /dev/block/sdc50
+lrwxrwxrwx 1 root root   15 2026-03-29 13:47 vbmeta_a -> /dev/block/sdc9
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 vbmeta_b -> /dev/block/sdc12
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 vbmeta_system_a -> /dev/block/sdc10
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 vbmeta_system_b -> /dev/block/sdc13
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 vbmeta_vendor_a -> /dev/block/sdc11
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 vbmeta_vendor_b -> /dev/block/sdc14
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 vendor_boot_a -> /dev/block/sdc31
+lrwxrwxrwx 1 root root   16 2026-03-29 13:47 vendor_boot_b -> /dev/block/sdc45
